@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from 'axios';
+import { axiosWithAuth } from '../../axiosWithAuth';
 
 import NavMenu from '../NavMenu/NavMenu';
 
@@ -16,7 +16,7 @@ class FriendList extends React.Component {
 
   componentDidMount() {
     const getFriends = () => {
-      axios.get('http://localhost:5000/api/friends')
+      axiosWithAuth().get('http://localhost:5000/api/friends') // get API call endpoint
         .then(response => {
           this.setState({ friendList: response.data })
         })

@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from 'axios';
+import { axiosWithAuth } from '../../axiosWithAuth';
 
 import NavMenu from '../NavMenu/NavMenu';
 
@@ -26,7 +26,7 @@ class AddFriend extends React.Component {
   handleSubmit = event => {
     event.preventDefault()
 
-    axios.post('http://localhost:5000/api/friends', this.state.friend)
+    axiosWithAuth().post('http://localhost:5000/api/friends', this.state.friend)
       .then(response => {
         this.setState({
           friend: {
