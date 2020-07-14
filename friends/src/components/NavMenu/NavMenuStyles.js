@@ -12,7 +12,7 @@ export const StyledNav = styled.nav`
 `;
 
 export const StyledLink = styled(Link)`
-  color: dodgerblue;
+  color: pink;
   text-decoration: none;
   font-size: 20px;
 `;
